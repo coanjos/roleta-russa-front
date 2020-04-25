@@ -1,0 +1,11 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "coanjos/roleta-russa-front"
+    },
+    "Ports": [
+        {
+            "ContainerPort": "80"
+        }
+    ]
+}

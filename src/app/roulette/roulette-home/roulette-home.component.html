@@ -1,0 +1,67 @@
+<h1 class="title is-1 has-text-primary has-text-centered">Roleta</h1>
+<h1 class="subtitle is-1 has-text-centered">Clique no botão para uma atriz aleatória</h1>                   
+<div class="columns is-centered">
+    <div *ngIf="star" class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <button (click)="onClick()" class="button is-primary is-fullwidth">Roll</button>
+                <figure class="image is-fullwidth">
+                    <img src="{{starApiUrl}}/api/stars/{{star._id}}/photo" alt="{{star.nome}}">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">{{ star.nome }}</p>                        
+                    </div>
+                </div>        
+                <div class="content">
+                                    
+                    <br>
+                    
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!star" class="column is-one-third">
+        <div class="card">
+            <div class="card-image">
+                <button (click)="onClick()" class="button is-primary is-fullwidth">Roll</button>
+                <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/256x256.png" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">Atriz</p>                        
+                    </div>
+                </div>        
+                <div class="content">
+                    
+                    
+                    <br>
+                    
+                </div>
+                    
+            </div>
+        </div>        
+    </div>   
+
+</div>
+
+
+
+

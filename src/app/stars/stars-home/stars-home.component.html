@@ -1,0 +1,24 @@
+<h1 class="title is-1 has-text-primary has-text-centered">Estrelas Pornô</h1>
+<h1 class="subtitle is-1 has-text-centered">Galeria de atrizes</h1>
+
+<div class="container has-text-centered">
+    <a [routerLink]="['/stars/new']" routerLinkActive="active">
+        <button class="button is-primary is-large">Nova</button>
+    </a>    
+</div>
+
+
+<div class="columns is-mobile is-multiline">
+    <div *ngFor="let star of stars" class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <h3 class="title is-3 has-text-primary has-text-centered">{{ star.nome }}</h3>
+                <figure class="image is-fullwidth">
+                    <img src="{{starApiUrl}}/api/stars/{{star._id}}/photo" alt="">
+                </figure>
+                <button *ngIf="signedin$.value" (click)="onRemove(star._id)" class="button is-danger">Remover</button>
+                <button *ngIf="signedin$.value" [routerLink]="['/stars/patch', star._id]" class="button is-warning">Alterar</button>
+            </div>
+        </div>
+    </div>
+</div>

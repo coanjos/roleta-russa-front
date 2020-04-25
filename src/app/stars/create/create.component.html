@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="starForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+            <label class="label">Nome</label>
+            <div class="control">
+                <input class="input" type="text" formControlName="nome">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">País de Origem</label>
+            <div class="control">
+                <input class="input" type="text" formControlName="paisDeOrigem">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Imagem</label>
+            <div class="control">
+                <input (change)="onFileSelected($event)" class="input" type="file" formControlName="imagem">
+            </div>
+        </div>
+        <button class="button is-primary">Submit</button>
+    </form>
+</div>

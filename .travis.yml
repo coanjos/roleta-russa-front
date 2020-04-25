@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+    - 12
+services:
+    - docker
+
+before_script:
+    npm install -g @angular/cli
+    npm install
+
+script:
+    npm run build
+
+after_success:    
+    # Login
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Push to Docker Hub
+    - docker push coanjos/roleta-russa-front
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: sa-east-1
+    app: roleta-russa-front
+    env: RoletaRussaFront-env
+    bucket_name: elasticbeanstalk-sa-east-1-491740408545
+    bucket_path: roleta-russa-front
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY

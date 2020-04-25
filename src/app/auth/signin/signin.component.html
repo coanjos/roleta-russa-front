@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="title is-1 has-text has-text-centered">Login</h1>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <input class="input" type="text" formControlName="email">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Senha</label>
+            <div class="control">
+                <input class="input" type="password" formControlName="senha">
+            </div>
+        </div>
+        <button class="button is-primary">Submit</button>
+    </form>
+</div>
