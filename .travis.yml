@@ -1,17 +1,9 @@
 sudo: required
-dist: trusty
-language: node_js
-node_js:
-    - 12
 services:
     - docker
 
-before_script:
-    npm install -g @angular/cli
-    npm install
-
 script:
-    npm run build
+    docker build -t coanjos/roleta-russa-front .
 
 after_success:    
     # Login
