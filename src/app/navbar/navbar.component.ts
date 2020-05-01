@@ -8,10 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  signedin$ = this.authService.signedin$;    
+  signedin$ = this.authService.signedin$;
+  isNavbarActive = false;    
 
   constructor(private authService: AuthService, private router: Router) { 
     
+  }
+
+  onNavbarToggle() {
+    this.isNavbarActive = !this.isNavbarActive;
   }
 
   ngOnInit() {

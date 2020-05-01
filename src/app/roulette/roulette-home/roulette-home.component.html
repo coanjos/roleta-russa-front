@@ -4,7 +4,7 @@
     <div *ngIf="star" class="column is-one-quarter">
         <div class="card">
             <div class="card-image">
-                <button (click)="onClick()" class="button is-primary is-fullwidth">Roll</button>
+                <button (click)="onClick()" class="button is-success is-fullwidth">Reroll</button>
                 <figure class="image is-fullwidth">
                     <img src="{{starApiUrl}}/api/stars/{{star._id}}/photo" alt="{{star.nome}}">
                 </figure>
@@ -33,7 +33,7 @@
     <div *ngIf="!star" class="column is-one-third">
         <div class="card">
             <div class="card-image">
-                <button (click)="onClick()" class="button is-success is-fullwidth">Reroll</button>
+                <button (click)="onClick()" class="button is-primary is-fullwidth">Roll</button>
                 <figure class="image is-4by3">
                     <img src="https://bulma.io/images/placeholders/256x256.png" alt="Placeholder image">
                 </figure>
